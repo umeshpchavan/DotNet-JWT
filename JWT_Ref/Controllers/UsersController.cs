@@ -6,12 +6,21 @@ namespace JWT_Ref.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   
     public class UsersController : ControllerBase
     {
 
         [HttpGet]
+        [Authorize]
+        [Route("directory")]
         public IActionResult Get()
+        {
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("details/{id}")]
+        public IActionResult GetDetails(int  id)
         {
             return Ok();
         }
